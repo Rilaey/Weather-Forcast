@@ -1,0 +1,70 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+}
+
+h1 {
+    margin-left: 200px;
+    color: black;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.search-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.search-btn {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+}
+
+.btn-search {
+    width: 100%;
+}
+
+.current {
+    margin-top: 10px;
+    border: 2px solid gray;
+}
+
+.five-day-forcast {
+    margin-top: 5px;
+    /*border: 2px solid gray;*/
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.city {
+    font-size: 24px;
+}
+
+.sun {
+    width: 70px;
+    height: 50px;
+}
+
+.future {
+    width: 120px;
+}
+
+.future-text {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.future-head-text {
+    color: #fff;
+}
