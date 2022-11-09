@@ -57,7 +57,8 @@ h2 {
 }
 
 .future {
-    width: 120px;
+    /*width: 120px;*/
+    margin: 5px;
 }
 
 .future-text {
@@ -65,6 +66,3 @@ h2 {
     padding-left: 5px;
 }
 
-.future-head-text {
-    color: #fff;
-}
