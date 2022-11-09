@@ -40,33 +40,33 @@ searchButtonEl.addEventListener('click', function() {
 
             document.getElementById('day-1-date').textContent = data['list']['0']['dt_txt'];
             document.getElementById('pic-1').src = 'https://openweathermap.org/img/wn/'+ data['list']['0']['weather'][0]['icon'] +'@2x.png'
-            document.getElementById('day-1-temp').textContent =  'Temp: ' + data['list']['0']['main']['temp'];
-            document.getElementById('day-1-humidity').textContent = 'Wind:' + data['list']['0']['wind']['speed'];
-            document.getElementById('day-1-wind').textContent = 'Humidity: ' + data['list']['0']['main']['humidity'];
+            document.getElementById('day-1-temp').textContent =  'Temp: ' + data['list']['0']['main']['temp'] + " °F";
+            document.getElementById('day-1-humidity').textContent = 'Wind:' + data['list']['0']['wind']['speed'] + " MPH";
+            document.getElementById('day-1-wind').textContent = 'Humidity: ' + data['list']['0']['main']['humidity'] + " %";
             
             document.getElementById('day-2-date').textContent = data['list']['8']['dt_txt'];
             document.getElementById('pic-2').src = 'https://openweathermap.org/img/wn/'+ data['list']['8']['weather'][0]['icon'] +'@2x.png'
-            document.getElementById('day-2-temp').textContent =  'Temp: ' + data['list']['8']['main']['temp'];
-            document.getElementById('day-2-humidity').textContent = 'Wind:' + data['list']['8']['wind']['speed'];
-            document.getElementById('day-2-wind').textContent = 'Humidity: ' + data['list']['8']['main']['humidity'];
+            document.getElementById('day-2-temp').textContent =  'Temp: ' + data['list']['8']['main']['temp'] + " °F";
+            document.getElementById('day-2-humidity').textContent = 'Wind:' + data['list']['8']['wind']['speed'] + " MPH";
+            document.getElementById('day-2-wind').textContent = 'Humidity: ' + data['list']['8']['main']['humidity'] + " %";
 
             document.getElementById('day-3-date').textContent = data['list']['16']['dt_txt'];
             document.getElementById('pic-3').src = 'https://openweathermap.org/img/wn/'+ data['list']['16']['weather'][0]['icon'] +'@2x.png'
-            document.getElementById('day-3-temp').textContent =  'Temp: ' + data['list']['16']['main']['temp'];
-            document.getElementById('day-3-humidity').textContent = 'Wind:' + data['list']['16']['wind']['speed'];
-            document.getElementById('day-3-wind').textContent = 'Humidity: ' + data['list']['16']['main']['humidity'];
+            document.getElementById('day-3-temp').textContent =  'Temp: ' + data['list']['16']['main']['temp'] + " °F";
+            document.getElementById('day-3-humidity').textContent = 'Wind:' + data['list']['16']['wind']['speed'] + " MPH";
+            document.getElementById('day-3-wind').textContent = 'Humidity: ' + data['list']['16']['main']['humidity'] + " %";
 
             document.getElementById('day-4-date').textContent = data['list']['24']['dt_txt'];
             document.getElementById('pic-4').src = 'https://openweathermap.org/img/wn/'+ data['list']['24']['weather'][0]['icon'] +'@2x.png'
-            document.getElementById('day-4-temp').textContent =  'Temp: ' + data['list']['24']['main']['temp'];
-            document.getElementById('day-4-humidity').textContent = 'Wind:' + data['list']['24']['wind']['speed'];
-            document.getElementById('day-4-wind').textContent = 'Humidity: ' + data['list']['24']['main']['humidity'];
+            document.getElementById('day-4-temp').textContent =  'Temp: ' + data['list']['24']['main']['temp'] + " °F";
+            document.getElementById('day-4-humidity').textContent = 'Wind:' + data['list']['24']['wind']['speed'] + " MPH";
+            document.getElementById('day-4-wind').textContent = 'Humidity: ' + data['list']['24']['main']['humidity'] + " %";
 
             document.getElementById('day-5-date').textContent = data['list']['32']['dt_txt'];
             document.getElementById('pic-5').src = 'https://openweathermap.org/img/wn/'+ data['list']['32']['weather'][0]['icon'] +'@2x.png'
-            document.getElementById('day-5-temp').textContent =  'Temp: ' + data['list']['32']['main']['temp'];
-            document.getElementById('day-5-humidity').textContent = 'Wind:' + data['list']['32']['wind']['speed'];
-            document.getElementById('day-5-wind').textContent = 'Humidity: ' + data['list']['32']['main']['humidity'];
+            document.getElementById('day-5-temp').textContent =  'Temp: ' + data['list']['32']['main']['temp'] + " °F";
+            document.getElementById('day-5-humidity').textContent = 'Wind:' + data['list']['32']['wind']['speed'] + " MPH";
+            document.getElementById('day-5-wind').textContent = 'Humidity: ' + data['list']['32']['main']['humidity'] + " %";
 
 
         })
