@@ -5,23 +5,20 @@ let userSearchEl = document.getElementById('user-search-input');
 let cityTemp = document.getElementById('city-temp');
 let cityWind = document.getElementById('city-wind');
 let cityHumidity = document.getElementById('city-humidity');
+const key = 'a7d21723ff40c0e628b4d0449cd0708b';
+let userSearchElValue = document.getElementById('user-search-input').value;
+
 
 //save user search input to local storage
 searchButtonEl.addEventListener('click', function() {
+
     let userSearchElValue = document.getElementById('user-search-input').value;
 
-    localStorage.setItem("userSearchElValue", userSearchElValue)
-
-    let newListItem = localStorage.getItem('userSearchElValue') + '<br>'
-
-    $(searchHistoryListEl).append(newListItem);
-
-    userInputCity.textContent = userSearchElValue + '   ' + moment().format("dddd, MMMM Do");
-
+    userInputCity.textContent = userSearchElValue + '   ' + moment().format("dddd, MMMM Do") 
     // on click fetch weather info and populate html
     // this fetch function generates the current weather information
-        const key = 'a7d21723ff40c0e628b4d0449cd0708b';
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+ userSearchElValue +'&units=imperial&appid='+ key)  
+        //fetch('https://api.openweathermap.org/data/2.5/weather?q='+ userSearchElValue +'&units=imperial&appid='+ key)  
+        fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ userSearchElValue +'&units=imperial&appid='+ key)
         .then(function(response) {
             if(response.status === 404) {
                 alert("Please input a valid city!")
@@ -31,20 +28,79 @@ searchButtonEl.addEventListener('click', function() {
              
 
         .then(function(data) {
-            let cityTempValue = data['main']['temp'];
-            let cityWindValue = data['wind']['speed'];
-            let cityHumidityValue = data['main']['humidity'];
+            console.log(data)
+            let cityTempValue = data['list']['0']['main']['temp'];
+            let cityWindValue = data['list']['0']['wind']['speed'];
+            let cityHumidityValue = data['list']['0']['main']['humidity'];
 
+            document.getElementById('top-img').src = 'https://openweathermap.org/img/wn/'+ data['list']['0']['weather'][0]['icon'] +'@2x.png'
             cityTemp.textContent = "Temp: " + cityTempValue + "°F";
             cityWind.textContent = "Wind: " + cityWindValue + "MPH";
             cityHumidity.textContent = "Humidity: " + cityHumidityValue + "%";
 
-            console.log(data)
+            document.getElementById('day-1-date').textContent = data['list']['0']['dt_txt'];
+            document.getElementById('pic-1').src = 'https://openweathermap.org/img/wn/'+ data['list']['0']['weather'][0]['icon'] +'@2x.png'
+            document.getElementById('day-1-temp').textContent =  'Temp: ' + data['list']['0']['main']['temp'];
+            document.getElementById('day-1-humidity').textContent = 'Wind:' + data['list']['0']['wind']['speed'];
+            document.getElementById('day-1-wind').textContent = 'Humidity: ' + data['list']['0']['main']['humidity'];
+            
+            document.getElementById('day-2-date').textContent = data['list']['8']['dt_txt'];
+            document.getElementById('pic-2').src = 'https://openweathermap.org/img/wn/'+ data['list']['8']['weather'][0]['icon'] +'@2x.png'
+            document.getElementById('day-2-temp').textContent =  'Temp: ' + data['list']['8']['main']['temp'];
+            document.getElementById('day-2-humidity').textContent = 'Wind:' + data['list']['8']['wind']['speed'];
+            document.getElementById('day-2-wind').textContent = 'Humidity: ' + data['list']['8']['main']['humidity'];
+
+            document.getElementById('day-3-date').textContent = data['list']['16']['dt_txt'];
+            document.getElementById('pic-3').src = 'https://openweathermap.org/img/wn/'+ data['list']['16']['weather'][0]['icon'] +'@2x.png'
+            document.getElementById('day-3-temp').textContent =  'Temp: ' + data['list']['16']['main']['temp'];
+            document.getElementById('day-3-humidity').textContent = 'Wind:' + data['list']['16']['wind']['speed'];
+            document.getElementById('day-3-wind').textContent = 'Humidity: ' + data['list']['16']['main']['humidity'];
+
+            document.getElementById('day-4-date').textContent = data['list']['24']['dt_txt'];
+            document.getElementById('pic-4').src = 'https://openweathermap.org/img/wn/'+ data['list']['24']['weather'][0]['icon'] +'@2x.png'
+            document.getElementById('day-4-temp').textContent =  'Temp: ' + data['list']['24']['main']['temp'];
+            document.getElementById('day-4-humidity').textContent = 'Wind:' + data['list']['24']['wind']['speed'];
+            document.getElementById('day-4-wind').textContent = 'Humidity: ' + data['list']['24']['main']['humidity'];
+
+            document.getElementById('day-5-date').textContent = data['list']['32']['dt_txt'];
+            document.getElementById('pic-5').src = 'https://openweathermap.org/img/wn/'+ data['list']['32']['weather'][0]['icon'] +'@2x.png'
+            document.getElementById('day-5-temp').textContent =  'Temp: ' + data['list']['32']['main']['temp'];
+            document.getElementById('day-5-humidity').textContent = 'Wind:' + data['list']['32']['wind']['speed'];
+            document.getElementById('day-5-wind').textContent = 'Humidity: ' + data['list']['32']['main']['humidity'];
+
+
         })
         .catch(function(err) {
           // catch any errors
             console.log(err);
         });
-
-        
 }); 
+
+// // save to local storage
+// searchButtonEl.addEventListener('click', function() {
+//     let storedHistory = document.createElement('button');
+//     $(storedHistory).css("width", "140px");
+//     $(storedHistory).css("margin-top", "10px");
+
+//     let userRecentCity = document.querySelector('.user-city').value;
+//     localStorage.setItem('userRecentCity', userRecentCity);
+
+//     let userStoredCity = localStorage.getItem('userRecentCity');
+//     storedHistory.textContent = userStoredCity;
+
+//     searchHistoryListEl.appendChild(storedHistory);
+
+//     if(userRecentCity) {
+//     storedHistory.textContent = userStoredCity;
+//     }
+// })
+
+// searchButtonEl.addEventListener('click', function() {
+//     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ userSearchElValue +'&units=imperial&appid='+ key)
+//     .then(function(response) {
+//         return response.json()
+//     })
+//     .then(function(data) {
+//         console.log(data)
+//     })
+// })
