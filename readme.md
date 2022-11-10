@@ -10,4 +10,4 @@
 
 - Link to deployed application https://rilaey.github.io/Weather-Forcast/
 
-![Screenshot of application](./img/weather-screenshot.pdf)
+![Screenshot of application](./img/weather-screenshot.png)
