@@ -78,13 +78,20 @@ searchButtonEl.addEventListener('click', function() {
 }); 
 
 // save to local storage
-searchButtonEl.addEventListener('click', function() {
+searchButtonEl.addEventListener('click', function(event) {
+    event.preventDefault()
+
+    let storedHistoryArr = []
+
     let storedHistory = document.createElement('button');
     $(storedHistory).css("width", "140px");
     $(storedHistory).css("margin-top", "10px");
 
    let test = document.getElementById('user-search-input').value;
    localStorage.setItem('test', test);
+
+    storedHistoryArr.pop(test);
+    console.log(storedHistoryArr);
 
    let tester = localStorage.getItem('test');
    storedHistory.textContent = tester;
