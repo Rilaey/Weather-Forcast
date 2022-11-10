@@ -7,3 +7,7 @@
 - The problem this project solves is that it gives the user a simple and very well layed out description of the weather they wish to know.
 
 - During the duration of the project I learned my way around the OpenWeatherMapApi along with implementing the value that was returned and laying it out on the page for the user to enjoy.
+
+- Link to deployed application https://rilaey.github.io/Weather-Forcast/
+
+![Screenshot of application](./img/weather-screenshot.pdf)
