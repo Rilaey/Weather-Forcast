@@ -1,3 +1,4 @@
+// global variables
 let searchButtonEl = document.getElementById('search-click');
 let searchHistoryListEl = document.getElementById('search-list');
 let userInputCity = document.getElementById('city-name');
@@ -16,8 +17,7 @@ searchButtonEl.addEventListener('click', function() {
 
     userInputCity.textContent = userSearchElValue + '   ' + moment().format("dddd, MMMM Do") 
     // on click fetch weather info and populate html
-    // this fetch function generates the current weather information
-        //fetch('https://api.openweathermap.org/data/2.5/weather?q='+ userSearchElValue +'&units=imperial&appid='+ key)  
+    // this fetch function generates the current weather information  
         fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ userSearchElValue +'&units=imperial&appid='+ key)
         .then(function(response) {
             if(response.status === 404) {
@@ -29,6 +29,7 @@ searchButtonEl.addEventListener('click', function() {
 
         .then(function(data) {
             console.log(data)
+            // getting data from the list of 40 array items and putting it on the html
             let cityTempValue = data['list']['0']['main']['temp'];
             let cityWindValue = data['list']['0']['wind']['speed'];
             let cityHumidityValue = data['list']['0']['main']['humidity'];
@@ -76,31 +77,18 @@ searchButtonEl.addEventListener('click', function() {
         });
 }); 
 
-// // save to local storage
-// searchButtonEl.addEventListener('click', function() {
-//     let storedHistory = document.createElement('button');
-//     $(storedHistory).css("width", "140px");
-//     $(storedHistory).css("margin-top", "10px");
+// save to local storage
+searchButtonEl.addEventListener('click', function() {
+    let storedHistory = document.createElement('button');
+    $(storedHistory).css("width", "140px");
+    $(storedHistory).css("margin-top", "10px");
 
-//     let userRecentCity = document.querySelector('.user-city').value;
-//     localStorage.setItem('userRecentCity', userRecentCity);
+   let test = document.getElementById('user-search-input').value;
+   localStorage.setItem('test', test);
 
-//     let userStoredCity = localStorage.getItem('userRecentCity');
-//     storedHistory.textContent = userStoredCity;
+   let tester = localStorage.getItem('test');
+   storedHistory.textContent = tester;
 
-//     searchHistoryListEl.appendChild(storedHistory);
+   searchHistoryListEl.append(storedHistory);
+})
 
-//     if(userRecentCity) {
-//     storedHistory.textContent = userStoredCity;
-//     }
-// })
-
-// searchButtonEl.addEventListener('click', function() {
-//     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+ userSearchElValue +'&units=imperial&appid='+ key)
-//     .then(function(response) {
-//         return response.json()
-//     })
-//     .then(function(data) {
-//         console.log(data)
-//     })
-// })
