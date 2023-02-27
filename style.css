@@ -40,13 +40,6 @@ h2 {
     border: 2px solid gray;
 }
 
-.five-day-forcast {
-    margin-top: 5px;
-    /*border: 2px solid gray;*/
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .city {
     font-size: 24px;
 }
@@ -70,6 +63,24 @@ p {
     font-size: 12px;
 }
 
-/* .btn-search {
-    margin-top: 5px;
-} */
+.over-forcast {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.list-search {
+    width: 50%;
+}
+
+@media screen and (max-width: 795px) {
+    .over-forcast {
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .over-forcast>* {
+        flex: 1 1 80px;
+    }
+}

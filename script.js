@@ -84,7 +84,7 @@ searchButtonEl.addEventListener('click', function(event) {
     let storedHistoryArr = []
 
     let storedHistory = document.createElement('button');
-    $(storedHistory).css("width", "140px");
+    $(storedHistory).css("width", "80px");
     $(storedHistory).css("margin-top", "10px");
 
    let test = document.getElementById('user-search-input').value;
